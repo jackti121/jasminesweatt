@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+    padding-top: 20px;
+    transition: background-color 0.5s ease;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+    background: #ffcccc;
+}
+
+.background-overlay {
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#ffe6e6 20%, transparent 20%) center/10px 10px;
+    z-index: -1;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+    font-family: 'arial', cursive;
+    position: relative;
+    z-index: 1;
+}
+h2 {
+    font-size: 3.55em;
+    top: 19.75px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeIn 2s ease-in-out;
+    font-family: 'arial', cursive;
+    position: absolute;
+    z-index: 1;
+    white-space: nowrap;
+    color: white;
+}
+
+#game {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.heart {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    background: url('heart.png') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: absolute;
+    animation: float 4s ease-in-out infinite;
+}
+
+.heart:hover {
+    transform: scale(1.2);
+}
+
+#message-box {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+#photos {
+    margin-top: 20px;
+}
+
+#photos img {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#photos img:hover {
+    transform: scale(1.1);
+}
+
+.heartfelt-message {
+    font-size: 1.5em;
+    margin-top: 20px;
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+    z-index: 1;
+}
+
+.bubble {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    bottom: -20px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #ffcccc,
+    0 0 50px white;
+    animation: rise 10s infinite ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-800px) scale(1.5);
+        opacity: 0;
+    }
+}
